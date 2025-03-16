@@ -54,7 +54,7 @@ const GPIO_BASE: u32 = 0x6000_4000;
 
 #[main]
 fn main() -> ! {
-    // The esp32s3 has a few watchdogs that reset the system if they are not feed Instead of
+    // The esp32s3 has a few watchdogs that reset the system if they are not fed. Instead of
     // feeding them we'll just disable them. It seems like it's actually only the rtc watchdog that
     // needs to be disabled for this to work though, dunno why.
     disable_super_watchdog();
@@ -81,7 +81,7 @@ fn main() -> ! {
 }
 
 fn spin_loop(n: u32) {
-    // This is a poor man's spin_loop. We use black_box to ensure it isn't optimized away
+    // This is a poor man's spin_loop. We use black_box to ensure it isn't optimized away.
     let inc = |i: u32| i + 1;
 
     let mut v = 0;
